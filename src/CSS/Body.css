@@ -1,0 +1,125 @@
+.bok {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+img {
+  width: 192px;
+  height: 300px;
+}
+.prince {
+  color: red;
+}
+s {
+  color: gray;
+  text-decoration: line-through;
+  margin-left: 50px;
+}
+.sale {
+  position: relative;
+}
+
+.sale::before {
+  content: "SALE -10%";
+  position: absolute;
+  top: 10px; /* Đặt khoảng cách từ trên */
+  left: -20px; /* Hoặc right: -20px nếu muốn bên phải */
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  transform: rotate(-20deg); /* Xoay nhẹ chữ */
+  z-index: 1;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.banner {
+  width: 100%; /* Đảm bảo banner chiếm toàn bộ chiều rộng */
+  overflow: hidden; /* Loại bỏ nội dung tràn nếu có */
+}
+
+.banner > img {
+  width: 100%; /* Đặt chiều rộng ảnh theo chiều rộng của container */
+  height: auto; /* Giữ tỷ lệ ảnh */
+  display: block; /* Xóa khoảng trống dưới ảnh (nếu có) */
+}
+
+.on {
+  width: 54px;
+  font-size: 50px;
+}
+@media (max-width: 768px) {
+  .sale {
+    flex: 1 1 calc(100% - 10px); /* Chiếm 100% màn hình */
+  }
+
+  .col-md-3 {
+    flex: 1 1 calc(100% - 20px); /* Các mục dịch vụ cũng chiếm 100% */
+  }
+
+  .on {
+    font-size: 30px; /* Thu nhỏ icon trên thiết bị nhỏ */
+  }
+}
+
+@media (max-width: 576px) {
+  .h1,
+  .h2 {
+    font-size: 1.5rem; /* Thu nhỏ tiêu đề */
+  }
+
+  .prince {
+    font-size: 0.9rem; /* Thu nhỏ chữ giá */
+  }
+
+  s {
+    font-size: 0.8rem; /* Thu nhỏ giá gạch ngang */
+  }
+}
+
+#slider {
+  overflow: hidden;
+}
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 20s slider infinite;
+}
+
+#slider figure img {
+  float: left;
+  width: 20%;
+  height: 10%;
+}
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  20% {
+    left: 0;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: 0;
+  }
+}
